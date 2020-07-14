@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Search</title>
+<style>
+body{
+background-color:#8A2BE2;
+}
+#show{
+background-color:#FFDAB9;
+}
+label{
+	margin-left:20px;
+}
+input{
+	margin-left:80px;
+}
+.details{
+	background-color:#9370DB;
+}
+select{
+align:center;
+width:150px;
+}
+</style>
+<script>
+	function showResult()
+	{
+		var city= document.getElementById("city").value;
+		var type= document.getElementById("type").value;
+		var show= document.getElementById("show");
+		
+		//console.log(city, type);
+		if(city == "delhi" && type == "Bike")
+		{
+			show.style.display = "block";
+			document.getElementById('image').src = "https://www.ridobiko.com/sample_images/activa.png";
+			document.getElementById('bikeName').value="Activa";
+			document.getElementById('Rent').value="400";
+			document.getElementById('Deposit').value="2000";
+			document.getElementById('vehicleType').value=type;
+			
+			document.getElementById('image1').src = "https://www.ridobiko.com/sample_images/fz.png";
+			document.getElementById('bikeName1').value="FZ";
+			document.getElementById('Rent1').value="700";
+			document.getElementById('Deposit1').value="2000";
+			document.getElementById('bikeName1').value="Activa";
+			document.getElementById('vehicleType1').value=type;
+		}
+		else if(city == "delhi" && type == "Car")
+		{
+			show.style.display ="block";
+		
+			document.getElementById('image').src = "https://www.ridobiko.com/sample_images/wagon.png";
+			document.getElementById('bikeName').value="Wagon R";
+			document.getElementById('Rent').value="1200";
+			document.getElementById('Deposit').value="5000";
+			document.getElementById('vehicleType').value=type;
+			
+			document.getElementById('image1').src = "https://www.ridobiko.com/sample_images/swift.png";
+			document.getElementById('bikeName1').value="Swift";
+			document.getElementById('Rent1').value="1800";
+			document.getElementById('Deposit1').value="2000";
+			document.getElementById('vehicleType1').value=type;
+		}
+		else
+		{
+		document.write("please select the value");
+		}
+	}
+</script>
+</head>
+<body>
+<div id="container">
+	<h2 style="text-align: center;">Welcome</h2>
+	<h3 style="text-align: center;">Rent Vehicle Easily</h3>
+<div>
+	<center>
+	<select class="dropdown" id="city" name="City">
+		<option selected>Select City</option>
+		<option value="delhi">Delhi</option>
+	</select><br/><br/><br/>
+	<select class="dropdown" id="type" name="Type">
+		<option selected> Select Type</option>
+		<option value="Bike">Bike</option>
+		<option value="Car">Car</option>
+	</select><br/><br/><br/>
+	<input type="button" Value="Search" onclick="showResult()">
+	</center>
+</div>
+<div id="show" style="display:none">
+	<div>
+		<img id="image" src="" width="100%" /><br/>
+		<div class="details">
+		<label>Vehicle Name</label><br/>
+		<input id="bikeName" readonly><br/>
+		<label>Rent/Day</label><br/>
+		<input id="Rent" readonly><br/>
+		<label>Deposit</label><br/>
+		<input id="Deposit" readonly><br/>
+		<label>Vehicle Type</label><br/>
+		<input id="vehicleType" readonly><br/>
+		</div>
+	</div>
+	<div>
+		<img id="image1" src="" width="100%"/><br/>
+		<div class="details">
+		<label>Vehicle Name</label><br/>
+		<input id="bikeName1" readonly><br/>
+		<label>Rent/Day</label><br/>
+		<input id="Rent1"readonly><br/>
+		<label>Deposit</label><br/>
+		<input id="Deposit1" readonly><br/>
+		<label>Vehicle Type</label><br/>
+		<input id="vehicleType1" readonly><br/>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
